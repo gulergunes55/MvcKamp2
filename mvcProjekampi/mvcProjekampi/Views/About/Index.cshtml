@@ -1,0 +1,53 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{ string status = "";}
+@{ string buttonTyp = "";}
+
+<h2>Hakkımızda Veri Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Hakkımızda Başlığı-1</th>
+        <th>Hakkımızda başlığı-2</th>
+        <th>Hakkımızda fotoğraf-1</th>
+        <th>Hakkımızda fotoğraf-2</th>
+        <th>Pasif Yap</th>
+
+    </tr>
+
+    @*<td><a href="#" class="btn btn-warning">Aktif Yap</a></td>
+        <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>*@
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.Status == true)
+        {
+            status = "Pasif Yap";
+            buttonTyp = "btn btn-danger";
+        }
+        if (item.Status == false)
+        {
+            status = "Aktif Yap";
+            buttonTyp = "btn btn-success";
+        }
+        <tr>
+            <td>@item.AboutID</td>
+            <td>@item.AboutDetails1</td>
+            <td>@item.AboutDetails2</td>
+            <td>@item.AboutImage1</td>
+            <td>@item.AboutImage2</td>
+            <td><a href="/About/IsActive/@item.AboutID" class="@buttonTyp">@status</a></td>
+        </tr>
+    }
+</table>
+
+
+
+@Html.Action("AboutPartial", "About")
+
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
