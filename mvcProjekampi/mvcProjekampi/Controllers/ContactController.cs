@@ -17,7 +17,7 @@ namespace mvcProjekampi.Controllers
         MessageManager mm = new MessageManager(new EfMessageDal());
         public ActionResult Index()
         {
-            string session = (string)Session["AdminUserName"];
+            string p = (string)Session["AdminUserName"];
 
             
             var contactvalues = cm.GetList();
@@ -33,20 +33,20 @@ namespace mvcProjekampi.Controllers
         }
         public PartialViewResult ContactPartial()
         {
-            string session = (string)Session["AdminUserName"];
+            string p = (string)Session["AdminUserName"];
             var contact = cm.GetList().Count();
             ViewBag.d1 = contact;
 
-            var sendMail = mm.GetListSendbox(session).Count();
+            var sendMail = mm.GetListSendbox(p).Count();
             ViewBag.d2 = sendMail;
 
-            var receiverMail = mm.GetListInbox().Count();
+            var receiverMail = mm.GetListInbox(p).Count();
             ViewBag.d3 = receiverMail;
 
-            var ReadMail = mm.GetReadList(session).Count();
+            var ReadMail = mm.GetReadList(p).Count();
             ViewBag.d4 = ReadMail;
 
-            var unReadMail = mm.GetUnReadList(session).Count();
+            var unReadMail = mm.GetUnReadList(p).Count();
             ViewBag.d5 = unReadMail;
 
             var trashMail = mm.GetListTrash().Count();

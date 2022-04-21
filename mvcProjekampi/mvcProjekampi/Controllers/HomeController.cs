@@ -26,5 +26,10 @@ namespace mvcProjekampi.Controllers
 
             return View();
         }
+        [AllowAnonymous]
+        public ActionResult HomePage()
+        {
+            return View();
+        }
     }
 }

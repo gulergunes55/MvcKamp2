@@ -21,5 +21,10 @@ namespace mvcProjekampi.Controllers
             var contentvalues = cm.GetListByHeadingID(id);
             return View(contentvalues);
         }
+        public ActionResult GetAllContent(string p)
+        {
+            var values = cm.GetList(p);
+            return View(values);
+        }
     }
 }

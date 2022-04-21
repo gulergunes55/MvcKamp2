@@ -23,9 +23,9 @@ namespace BusinessLayer.Concrete
             return _messageDal.Get(x => x.MessageID == id);
         }
 
-        public List<Message> GetListInbox()
+        public List<Message> GetListInbox(string p)
         {
-            return _messageDal.List(x => x.ReciverMail == "admin@gmail.com");
+            return _messageDal.List(x => x.ReciverMail == p);
         }
         public List<Message> GetListTrash()
         {
@@ -34,9 +34,9 @@ namespace BusinessLayer.Concrete
 
 
 
-        public List<Message> GetListSendbox(string session)
+        public List<Message> GetListSendbox(string p)
         {
-            return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
+            return _messageDal.List(x => x.SenderMail == p);
         }
 
         public void MessageAdd(Message message)

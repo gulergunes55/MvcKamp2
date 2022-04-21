@@ -92,3 +92,7 @@ C:\Users\LENOVO\source\repos\mvcProjekampi\mvcProjekampi\bin\EntityFramework.xml
 C:\Users\LENOVO\source\repos\mvcProjekampi\mvcProjekampi\bin\EntityFramework.SqlServer.xml
 C:\Users\LENOVO\source\repos\mvcProjekampi\mvcProjekampi\bin\FluentValidation.dll
 C:\Users\LENOVO\source\repos\mvcProjekampi\mvcProjekampi\bin\FluentValidation.xml
+C:\Users\LENOVO\source\repos\mvcProjekampi\mvcProjekampi\bin\PagedList.dll
+C:\Users\LENOVO\source\repos\mvcProjekampi\mvcProjekampi\bin\PagedList.Mvc.dll
+C:\Users\LENOVO\source\repos\mvcProjekampi\mvcProjekampi\bin\PagedList.xml
+C:\Users\LENOVO\source\repos\mvcProjekampi\mvcProjekampi\bin\PagedList.Mvc.xml
